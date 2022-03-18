@@ -1,0 +1,24 @@
+.Navbar {
+    display: flex;
+    padding: 10px;
+    overflow: hidden;
+    border-bottom: solid lightgray 2px;
+}
+.Navbar a {
+    color: #007bff;
+    padding: 10px;
+    text-decoration: none;
+}
+
+.Navbar a.active {
+    color:#007bff;
+    font-weight: bold;
+}
+
+.Navbar-right {
+    text-align: end;
+}
+
+.Navbar-brand {
+    font-size: 1.25rem;
+}

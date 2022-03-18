@@ -1,0 +1,24 @@
+.Home {
+    margin:auto;
+    margin-top: 50px;
+    text-align: center;
+}
+
+.Home-title {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.Home-message {
+    font-size: 1.2rem;
+}
+
+.Home button {
+    font-weight: bold;
+    margin: 10px;
+}
+
+.Home-welcome {
+    font-size: 2rem;
+    font-weight: bolder;
+}

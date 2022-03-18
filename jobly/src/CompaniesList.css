@@ -1,0 +1,13 @@
+.CompaniesList-form {
+    margin: 10px 20px 10px 20px;
+}
+
+.CompaniesList-form input {
+    width: 600px;
+    display: inline;
+}
+
+.CompaniesList-form button {
+    margin-bottom: 7px;
+    margin-left: 10px;
+}

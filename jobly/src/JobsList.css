@@ -1,0 +1,25 @@
+.JobsList {
+    border: solid gray 1px;
+    box-shadow: 3px 3px lightgray;
+    border-radius: 4px;
+    padding: 10px 15px 5px 15px;
+    margin: 12px;
+}
+
+.JobsList-form {
+    margin: 10px 20px 10px 20px;
+}
+
+.JobsList-form input {
+    width: 600px;
+    display: inline;
+}
+
+.JobsList-form button {
+    margin-bottom: 7px;
+    margin-left: 10px;
+}
+
+.JobsList-notfound {
+    margin-left: 50px;
+}

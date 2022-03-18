@@ -1,0 +1,17 @@
+.CompanyWithJobs {
+    border: solid gray 1px;
+    box-shadow: 3px 3px lightgray;
+    border-radius: 4px;
+    padding: 10px 15px 5px 15px;
+    margin: 12px;
+}
+
+.CompanyWithJobs-header {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.CompanyWithJobs ul {
+    list-style-type: none;
+    padding-left: 0;
+}
