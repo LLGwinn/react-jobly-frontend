@@ -9,6 +9,12 @@ import JoblyApi from './api';
 function App() {
   const [token, setToken] = useState(localStorage.getItem('token'));
   const [currUser, setCurrUser] = useState(JSON.parse(localStorage.getItem('currUser')));
+  try {
+    JSON.parse(localStorage.getItem('currUser'))
+  } catch (err) {
+    console.log(err);
+  }
+
   const history = useHistory();
 
   useEffect(function saveCredentialsToLocalStorage() {
@@ -19,25 +25,26 @@ function App() {
   async function login(username, password) {
     try {
       const authToken = await JoblyApi.authenticateUser(username, password);
-      setToken(authToken);
       const user = await JoblyApi.getUser(username);
-      setCurrUser(user);
-      history.push ('/'); 
+      if (authToken && user) {
+        setToken(authToken);
+        setCurrUser(user);
+        history.push ('/'); 
+      } else throw new Error()
     } catch(err) {
-      console.log(err)
+      alert ('Invalid username/password.')
     }
   }
 
   async function signup(newUser) {
-    try {
-      const authToken = await JoblyApi.registerUser(newUser);
-      setToken(authToken);
-      const user = await JoblyApi.getUser(newUser.username);
-      setCurrUser(user);
-      history.push ('/');
-    } catch(err) {
-      console.log(err)
-    }
+    const authToken = await JoblyApi.registerUser(newUser).catch((err) => {
+      console.log(err);
+    });
+    setToken(authToken);
+    const user = await JoblyApi.getUser(newUser.username);
+    setCurrUser(user);
+    history.push ('/');
+
   }
 
   function logout() {
