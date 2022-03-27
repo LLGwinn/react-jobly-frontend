@@ -8,11 +8,13 @@ import JoblyApi from './api';
 
 function App() {
   const [token, setToken] = useState(localStorage.getItem('token'));
-  const [currUser, setCurrUser] = useState(JSON.parse(localStorage.getItem('currUser')));
+  const [currUser, setCurrUser] = useState(localStorage.getItem('currUser'));
   try {
-    JSON.parse(localStorage.getItem('currUser'))
+    if (currUser) {
+      JSON.parse(localStorage.getItem('currUser'));
+    }
   } catch (err) {
-    console.log(err);
+    console.log('currUser is undefined', err);
   }
 
   const history = useHistory();
